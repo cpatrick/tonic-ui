@@ -1,0 +1,196 @@
+.CatalystWidget {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.CatalystWidget_control {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20%;
+    max-width: 400px;
+    min-width: 300px;
+    z-index: 1;
+
+    border-radius: 5px;
+
+    background-color: rgba(255,255,255,0.3);
+    color: rgba(0,0,0,0.3);
+}
+
+.CatalystWidget_control:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.CatalystWidget_control.is-collapsed:hover {
+    background: none;
+}
+
+.CatalystWidget_control input[type=number].LookupTableWidget__input {
+    color: black;
+}
+
+.CatalystWidget_control select,
+.CatalystWidget_control input[type=number],
+.CatalystWidget_control input[type=text] {
+    background-color: rgba(0,0,0,0);
+}
+
+.CatalystWidget_control select {
+    appearance: none;
+    padding: 1px 5px;
+    background-image: url('select-arrows.png');
+    background-repeat: no-repeat;
+    background-position: 99%;
+    background-size: 13px 13px;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-style: solid;
+    border-radius: 3px;
+}
+
+.CatalystWidget_control.is-collapsed {
+    min-width: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+}
+
+.CatalystWidget_control.is-collapsed > .CatalystWidget_control_content {
+    display: none;
+}
+
+.CatalystWidget_control_bar {
+    height: 25px;
+
+    border: 1px solid;
+    border-radius: 5px 5px 0 0;
+    border-color: #ccc;
+}
+
+.CatalystWidget_control:hover .CatalystWidget_control_bar {
+    background-color: #eee;
+}
+
+.CatalystWidget_control.is-collapsed > .CatalystWidget_control_bar {
+    background: none;
+    border: none;
+    display: inline;
+}
+
+.CatalystWidget_control > .CatalystWidget_control_bar > i {
+    width: 1.52em;
+    height: 1.25em;
+    padding-top: 0.25em;
+
+    text-align: center;
+
+    margin-left: 0.5em;
+
+    /* click cursor */
+    cursor: pointer;
+    user-select: none;
+}
+
+.CatalystWidget_control.is-collapsed > .CatalystWidget_control_bar > i {
+    border: 1px solid;
+    border-radius: 50%;
+    border-color: #ccc;
+
+    background-color: #eee;
+}
+
+.CatalystWidget_control_bar > i.right {
+    float: right;
+}
+
+.CatalystWidget_control_bar > i.left {
+    float: left;
+}
+
+.CatalystWidget_control.is-collapsed > .CatalystWidget_control_bar > i.left {
+    display: none;
+}
+
+.CatalystWidget_control_content {
+    border: 1px solid;
+    border-radius: 0 0 5px 5px;
+    border-color: #ccc;
+
+    padding-left: 5px;
+    padding-bottom: 0.5em;
+
+    max-height: calc(100vh - 55px);
+    overflow-y: scroll;
+}
+
+.CatalystWidget_ImageViewerWidget {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.CatalystWidget__item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.CatalystWidget__item-row {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.CatalystWidget__item-label {
+    flex: 1;
+
+    /* bold */
+    font-weight: bold;
+
+    /* can't select text */
+    user-select: none;
+}
+
+/* Start with upper case letter */
+.CatalystWidget__item-label::first-letter { text-transform: uppercase; }
+
+.CatalystWidget__item-row > select {
+    width: 100%;
+    background-color: rbga(0,0,0,0);
+}
+
+@media screen and (max-width: 400px),
+screen and (orientation: landscape) and (max-device-width: 400px)  {
+    .CatalystWidget_control_bar {
+        height: 40px;
+    }
+
+    .CatalystWidget_control_bar > i {
+        font-size: 1.45em;
+    }
+
+    .CatalystWidget_control_content {
+        max-height: calc(100vh - 70px);
+    }
+}
+
+.is-ios-device .CatalystWidget_control_bar {
+    height: 40px;
+}
+
+.is-ios-device .CatalystWidget_control_bar > i {
+    font-size: 1.45em;
+}
+
+.is-ios-device .CatalystWidget_control_content {
+    max-height: calc(100vh - 70px);
+}

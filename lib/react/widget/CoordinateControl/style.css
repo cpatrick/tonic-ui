@@ -1,0 +1,20 @@
+.CoordinateControl .canvas {
+  border: 1px solid lightgray;
+  float: left;
+  margin-right: 3px;
+  font-family: sans-serif;
+}
+
+.CoordinateControl > .canvas:active, .CoordinateControl > .canvas:hover {
+  cursor: crosshair;
+}
+
+.CoordinateControl > input:first-child {
+  display: block;
+}
+
+.CoordinateControl > input {
+  margin: 3px 0 0 0;
+  padding: 2px 0 2px 3px;
+  width: 40px;
+}

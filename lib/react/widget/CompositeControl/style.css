@@ -1,0 +1,155 @@
+.CompositePipeline {
+    min-width: 5em;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+}
+
+.CompositePipeline_section {
+    min-width: 5em;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+}
+
+.CompositePipeline_item {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 2em;
+}
+
+.CompositePipeline_item.is-hidden {
+    display: none;
+}
+
+.CompositePipeline_item > i {
+    margin-right: 5px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.CompositePipeline_item .is-fade {
+    color: #aaa;
+}
+
+.CompositePipeline_children > .CompositePipeline_item {
+    padding-left: 20px;
+}
+
+.CompositePipeline_item-label {
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+    margin-left: 5px;
+    align-self: center;
+}
+
+.CompositePipeline_item-actions {
+    position: relative;
+    right: 0;
+}
+
+.CompositePipeline_item-actions > i {
+    flex: 1;
+    margin-right: 5px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.CompositePipeline_item-colorBy_menu {
+    position: absolute;
+    top: 2em;
+    right: 5px;
+    border: solid 1px black;
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.CompositePipeline_item-colorBy_menu > div {
+    cursor: pointer;
+}
+
+.CompositePipeline_item-colorBy_menu .is-selected {
+    font-weight: bold;
+}
+
+.CompositePipeline_item-colorBy_menu.is-hidden {
+    display: none;
+}
+.CompositePipeline_item-opacity {
+    flex: 1;
+}
+
+.CompositePipeline_item-opacity-hidden {
+    display: none;
+}
+
+@media screen and (max-device-width: 400px) {
+    .CompositePipeline i {
+        font-size: 1.45em;
+    }
+
+    .CompositePipeline_item-opacity {
+        height: 35px;
+    }
+
+    .CompositePipeline_item {
+        line-height: 3em;
+    }
+
+    .CompositePipeline input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    /* while the style is the same as above, neither will render if grouped */
+    .CompositePipeline input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+.is-ios-device .CompositePipeline i {
+    font-size: 1.45em;
+}
+
+.is-ios-device .CompositePipeline_item-opacity {
+    height: 35px;
+}
+
+.is-ios-device .CompositePipeline_item {
+    line-height: 3em;
+}
+
+.is-ios-device .CompositePipeline input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* while the style is the same as above, neither will render if grouped */
+.is-ios-device .CompositePipeline input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50%;
+}

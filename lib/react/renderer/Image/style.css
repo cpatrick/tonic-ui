@@ -1,0 +1,63 @@
+.UpdateDialog {
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.UpdateDialog__inside {
+    border-radius: 10px;
+    top: 10%;
+    left: calc(10% - 25px);
+    position: absolute;
+    width: 80%;
+    z-index: 2;
+    padding: 25px;
+    padding-bottom: 50px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.is-visible {
+    display: block;
+}
+
+.UpdateDialog__thumbnail {
+    float: left;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #888888;
+    margin-right: 25px;
+}
+
+.UpdateDialog__metadata_title > * {
+    font-size: 30px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.UpdateDialog__metadata_description {
+    max-height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.UpdateDialog__metadata_description > * {
+    outline: none;
+}
+
+.UpdateDialog__buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.UpdateDialog .UpdateDialog__inside .UpdateDialog__buttons > button {
+    padding: 5px 10px;
+    margin-left: 20px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 3px;
+}

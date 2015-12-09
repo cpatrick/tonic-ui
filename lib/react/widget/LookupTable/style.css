@@ -1,0 +1,142 @@
+.LookupTableWidget {
+    min-width: 5em;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+}
+
+.LookupTableWidget__line {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1.5em;
+}
+
+.LookupTableWidget__line > .LookupTableWidget__button {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-align: center;
+}
+
+.LookupTableWidget__line > .LookupTableWidget__label {
+    flex: 1;
+    white-space: nowrap;
+    font-weight: bold;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-align: center;
+}
+
+.LookupTableWidget__button {
+    cursor: pointer;
+    flex: none;
+    width: 1.5em;
+}
+
+.LookupTableWidget__canvas {
+    width: calc(100% - 3em);
+    height: 1.5em;
+}
+
+.LookupTableWidget__range {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.LookupTableWidget__range > input {
+    flex: 1;
+}
+
+.LookupTableWidget__range > .LookupTableWidget__button {
+    flex: none;
+}
+
+.LookupTableWidget__editContent {
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: none;
+}
+
+.LookupTableWidget__presets {
+    display: none;
+}
+
+.LookupTableWidget__preset {
+    flex: 1;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding: 5px 10px;
+
+    border: 1px solid #ccc;
+    text-align: center;
+
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.LookupTableWidget__presets > i {
+    padding-top: 0.3em;
+    font-size: 150%;
+}
+
+.LookupTableWidget__presets > i.is-disabled {
+    color: #ccc;
+}
+
+.LookupTableWidget.is-mode-none > .LookupTableWidget__range {
+    display: flex;
+}
+
+.LookupTableWidget.is-mode-edit > .LookupTableWidget__range {
+    display: flex;
+}
+
+.LookupTableWidget.is-mode-edit > .LookupTableWidget__editContent {
+    display: flex;
+}
+
+.LookupTableWidget.is-mode-preset > .LookupTableWidget__presets {
+    display: flex;
+}
+
+.LookupTableWidget__input {
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    min-width: 2em;
+}
+
+.LookupTableWidget__input.right {
+    text-align: right;
+}
+
+.Dropdown > ul {
+    list-style-type: none;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 10;
+    padding: 10px 14px;
+    top: 6px;
+    right: -11px;
+}
+
+.Dropdown > ul > li {
+    text-align: left;
+    padding: 5px 0;
+}
+
+.LookupTableWidget__line > input.NumberInput {
+    flex: 1;
+}

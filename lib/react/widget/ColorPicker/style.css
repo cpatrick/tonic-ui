@@ -1,0 +1,43 @@
+.ColorPicker {
+    min-width: 5em;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.ColorPicker__color {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.ColorPicker__color > canvas {
+    flex: none;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #000;
+    margin-right: 5px;
+}
+
+.ColorPicker__color > input {
+    flex: 1;
+    min-width: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.ColorPicker__swatch {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.ColorPicker__swatch > img {
+    width: 100%;
+}

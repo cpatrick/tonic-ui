@@ -1,0 +1,56 @@
+.CollapsibleElement {
+  width: 100%;
+  padding: 0;
+  font-family: sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  clear: both;
+}
+
+.CollapsibleElement_header {
+  position: relative;
+  left: 0;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+}
+
+.CollapsibleElement_header > .clickable-area > i {
+  transition: transform .2s ease;
+}
+
+.CollapsibleElement_header > .clickable-area > i.closed {
+  transform: rotate(-90deg);
+}
+
+.CollapsibleElement_header > .clickable-area > strong {
+  text-transform: capitalize;
+}
+
+.CollapsibleElement_header > span {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+}
+
+.CollapsibleElement_content {
+  padding: 5px 15px 0px 15px;
+}
+
+.CollapsibleElement_content.is-hidden {
+  display: none;
+}
+
+@media screen and (max-device-width: 400px) {
+    .CollapsibleElement_header-actions > i {
+        font-size: 1.45em;
+    }
+}
+
+.is-ios-device .CollapsibleElement_header-actions > i {
+    font-size: 1.45em;
+}

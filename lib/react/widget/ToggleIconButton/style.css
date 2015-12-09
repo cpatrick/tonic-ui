@@ -1,0 +1,23 @@
+.ToggleIconButton.is-enabled {
+    color: black;
+}
+
+.ToggleIconButton.is-disabled {
+    color: grey;
+}
+
+
+@media screen and (max-width: 400px),
+screen and (orientation: landscape) and (max-device-width: 400px) {
+
+    i.ToggleIconButton {
+        font-size: 1.4em;
+        height: 1.5em;
+    }
+
+}
+
+.is-ios-device i.ToggleIconButton {
+    font-size: 1.4em;
+    height: 1.5em;
+}

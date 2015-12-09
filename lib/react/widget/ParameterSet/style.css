@@ -1,0 +1,176 @@
+.QueryDataModelWidget {
+    min-width: 5em;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+}
+
+.QueryDataModelWidget__item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 10px;
+    border-left: 1px solid #aaa;
+    margin-left: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.QueryDataModelWidget__item.is-active {
+    border-left: 3px solid #000;
+    margin-left: 0;
+}
+
+.QueryDataModelWidget__item-row {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.QueryDataModelWidget__item-label {
+    flex: 1;
+
+    /* bold */
+    font-weight: bold;
+
+    /* can't select text */
+    user-select: none;
+
+    /* click pointer */
+    cursor: pointer;
+}
+
+/* style the value */
+.QueryDataModelWidget__item-control > div {
+    /* absolute */
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    /* Truncate text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Start with upper case letter */
+.QueryDataModelWidget__item-label::first-letter { text-transform: uppercase; }
+
+.QueryDataModelWidget__item-control {
+    display: flex;
+    width: 4em;
+    flex: none;
+    justify-content: flex-end;
+}
+
+.QueryDataModelWidget__item-control > i {
+    /* click pointer */
+    cursor: pointer;
+
+    /* side padding */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.QueryDataModelWidget__item-slider {
+    flex: 1;
+}
+
+.QueryDataModelWidget__item-slider > input {
+    width: 100%;
+}
+
+.QueryDataModelWidget__item-row > select {
+    width: 100%;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: 400px),
+screen and (orientation: landscape) and (max-device-width: 400px) {
+    .mobile-only {
+        display: flex;
+    }
+
+    .QueryDataModelWidget__item-control {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .QueryDataModelWidget__item-control > i{
+        font-size: 1.4em;
+        padding: 0;
+        text-align: center;
+        flex-grow: 1;
+        height: 1.5em;
+    }
+
+    .non-mobile {
+        display: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    /* while the style is the same as above, neither will render if grouped */
+    input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+.is-ios-device .mobile-only {
+    display: flex;
+}
+
+.is-ios-device .QueryDataModelWidget__item-control {
+    flex: 1;
+    justify-content: center;
+}
+
+.is-ios-device .QueryDataModelWidget__item-control > i{
+    font-size: 1.4em;
+    padding: 0;
+    text-align: center;
+    flex-grow: 1;
+    height: 1.5em;
+}
+
+.is-ios-device .non-mobile {
+    display: none;
+}
+
+.is-ios-device input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* while the style is the same as above, neither will render if grouped */
+.is-ios-device input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50%;
+}

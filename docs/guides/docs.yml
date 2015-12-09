@@ -1,0 +1,27 @@
+- title: Installation
+  docs:
+  - home
+  - webpack
+
+- title: Widgets
+  docs:
+  - CollapsibleElement
+  - ColorPicker
+  - CompositeControl
+  - CoordinateControl
+  - LookupTable
+  - NumberSliderControl
+  - ParameterSet
+
+- title: Renderers
+  docs:
+  - ImageRenderer
+  - MultiLayoutRenderer
+
+- title: Viewers
+  docs:
+  - AbstractMenuViewer
+  - ImageBuilderViewer
+  - LineChartViewer
+  - ProbeViewers
+  - CompositePipelineViewers

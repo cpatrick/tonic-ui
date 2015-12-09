@@ -1,0 +1,7 @@
+.sass-cache
+node_modules
+tests/sample/
+.DS_Store
+npm-debug.log
+.npmrc
+tests/coverage

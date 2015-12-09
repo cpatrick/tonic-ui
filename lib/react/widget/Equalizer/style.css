@@ -1,0 +1,12 @@
+.Equalizer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Equalizer > canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}

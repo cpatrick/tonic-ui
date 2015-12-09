@@ -1,0 +1,23 @@
+.LightProperties__container {
+    display: flex;
+    align-items: center;
+}
+
+.LightProperties__controls {
+    flex-grow: 1;
+}
+
+.LightProperties__inputRow {
+    display: block;
+    text-align: right;
+}
+
+.LightProperties__inputRow:first-child > .LightProperty {
+    margin-top: 0px;
+}
+
+.LightProperty {
+    width: 50px;
+    margin-left: 8px;
+    margin-top: 5px;
+}

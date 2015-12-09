@@ -1,0 +1,78 @@
+.FloatImageControl_item {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 2em;
+}
+
+.FloatImageControl_item.is-hidden {
+    display: none;
+}
+
+.FloatImageControl_item > i {
+    margin-right: 5px;
+    align-self: center;
+    cursor: pointer;
+    font-style: normal;
+    user-select: none;
+}
+
+.FloatImageControl_item .is-fade {
+    color: #aaa;
+}
+
+.FloatImageControl_item-label {
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+    margin-left: 5px;
+    align-self: center;
+}
+
+.FloatImageControl_item-actions {
+    position: relative;
+    right: 0;
+}
+
+.FloatImageControl_item-actions > i {
+    flex: 1;
+    margin-right: 5px;
+    align-self: center;
+    cursor: pointer;
+    font-style: normal;
+    user-select: none;
+}
+
+.FloatImageControl_item-colorBy_menu {
+    position: absolute;
+    top: 2em;
+    right: 5px;
+    border: solid 1px black;
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.FloatImageControl_item-colorBy_menu > div {
+    cursor: pointer;
+}
+
+.FloatImageControl_item-colorBy_menu .is-selected {
+    font-weight: bold;
+}
+
+.FloatImageControl_item-colorBy_menu.is-hidden {
+    display: none;
+}
+
+@media screen and (max-device-width: 400px) {
+    .FloatImageControl_item-actions > i {
+        font-size: 1.45em;
+    }
+}
+
+.is-ios-device .FloatImageControl_item-actions > i {
+    font-size: 1.45em;
+}
