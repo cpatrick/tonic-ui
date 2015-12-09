@@ -1,0 +1,414 @@
+<div class="hd">
+    <input id="search" type="search" placeholder="search" />
+    <label><input id="show-desc" type="checkbox" /> Show Description</label>
+</div>
+<div class="bd">
+    <div class="toc">
+            <h3 class="toc-mod-title"><a href="AbstractMenu.html">AbstractMenu</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="AbstractMenu.html#togglePanel">
+                    <h4>togglePanel()</h4>
+                    <span class="desc">Toggles the visibility of the control menu.</span>
+                </a>
+                <a class="toc-item" href="AbstractMenu.html#resetCamera">
+                    <h4>resetCamera()</h4>
+                    <span class="desc">Resets the camera on the ImageRenderer if the component is mounted.</span>
+                </a>
+                <a class="toc-item" href="AbstractMenu.html#play">
+                    <h4>play()</h4>
+                    <span class="desc">Starts animating the <strong>QueryDataModel</strong>.</span>
+                </a>
+                <a class="toc-item" href="AbstractMenu.html#stop">
+                    <h4>stop()</h4>
+                    <span class="desc">Stops any running animations on the <strong>QueryDataModel</strong>.</span>
+                </a>
+                <a class="toc-item" href="AbstractMenu.html#updateSpeed">
+                    <h4>updateSpeed()</h4>
+                    <span class="desc">Changes the animation speed by looping over the array <strong>this.state.speed</strong> which has a default set of values of [20, 50, 100, 200, 500].</span>
+                </a>
+                <a class="toc-item" href="AbstractMenu.html#InitialState">
+                    <h4>InitialState</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    collapsed: true,
+    speedIdx: 0,
+    speeds: [ 20, 50, 100, 200, 500 ]
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="AbstractMenu.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>queryDataModel</strong>: (Required) The instance of QueryDataModel to work with. - <strong>children</strong>: (Required) HTML or React content that should be inserted inside the menu.</li>
+
+<li><strong>mouseListener</strong>: (Optional) Map of mouse handling callback. If not provided, the queryDataModel.getTonicMouseListener() will be used.</li>
+
+<li><strong>imageBuilder</strong>: (Optional) Instance of an ImageBuilder. If any, the component will attach a listener using the onImageReady() method. If none provided, it will listen to the queryDataModel.onDataChange() for for data called 'image' and renders it.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="ButtonSelector.html">ButtonSelector</a></h3>
+            <div class="toc-list">
+            </div>
+            <h3 class="toc-mod-title"><a href="CollapsibleElement.html">CollapsibleElement</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="CollapsibleElement.html#DefaultProperties">
+                    <h4>DefaultProperties</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    title: '',
+    subtitle: '',
+    open: true
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="CollapsibleElement.html#isCollapsed">
+                    <h4>isCollapsed()</h4>
+                    <span class="desc">Returns true of <em>open</em> is false.</span>
+                </a>
+                <a class="toc-item" href="CollapsibleElement.html#isExpanded">
+                    <h4>isExpanded()</h4>
+                    <span class="desc">Returns true if <em>open</em> is true.</span>
+                </a>
+                <a class="toc-item" href="CollapsibleElement.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>title</strong>: Title element, appears next to button. - <strong>subtitle</strong>: Subtitle element, appears on the right of the container.</li>
+
+<li><strong>open</strong>: A boolean value if the element's children are visible or not.</li>
+
+<li><strong>children</strong>: A React element or HTML content, hidden or shown depending on the value of <em>open</em>.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="ColorPicker.html">ColorPicker</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="ColorPicker.html#InitialState">
+                    <h4>InitialState</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    swatch: this.props.swatch,
+    color: [0,0,0],
+    preview: false,
+    originalColor: [
+        this.props.color[0],
+        this.props.color[1],
+        this.props.color[2]
+    ]
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="ColorPicker.html#DefaultProperties">
+                    <h4>DefaultProperties</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    color: [0,0,0],
+    swatch: 'encoded/swatch'
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="ColorPicker.html#updateColor">
+                    <h4>updateColor(color)</h4>
+                    <span class="desc">Updates the selected color. The color is an array [r, g, b] where each number is between 0 and 255.</span>
+                </a>
+                <a class="toc-item" href="ColorPicker.html#updateSwatch">
+                    <h4>updateSwatch(url)</h4>
+                    <span class="desc">Updates the URL of the color swatch image.</span>
+                </a>
+                <a class="toc-item" href="ColorPicker.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>color</strong>: Initial color to use. - <strong>onChange</strong>: Callback function to call when a new color is picked. The argument of the callback method will be a [r,g,b] color array.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="CompositeControl.html">CompositeControl</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="CompositeControl.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>model</strong>: Instance of the PipelineState to use as model. </li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="CoordinateControl.html">CoordinateControl</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="CoordinateControl.html#InitialState">
+                    <h4>InitialState</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    x: 0,
+    y: 0
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="CoordinateControl.html#DefaultProperties">
+                    <h4>DefaultProperties</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    x: 0,
+    y: 0,
+    width: 50,
+    height: 50
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="CoordinateControl.html#updateCoordinates">
+                    <h4>updateCoordinates(coords)</h4>
+                    <span class="desc">Updates the coordinates in the control. The arguement <strong>coords</strong> is an object with the properties "x" and/or "y",
+only the properties "x" and "y" will get passed to the state. If the values
+for either of the properties are too large or small they will be
+clamped to 1.0 or -1.0 respectively.</span>
+                </a>
+                <a class="toc-item" href="CoordinateControl.html#coordinates">
+                    <h4>coordinates()</h4>
+                    <span class="desc">Returns an object of the coordinates in the format <code>{x: val, y: val}</code>.</span>
+                </a>
+                <a class="toc-item" href="CoordinateControl.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>x</strong>: X coordinate of the control ranges between -1.0 and 1.0 inclusive. - <strong>y</strong>: Y coordinate of the control, ranges between -1.0 and 1.0 inclusive.</li>
+
+<li><strong>width</strong>: Width of the control in px.</li>
+
+<li><strong>height</strong>: Height of the control in px.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="Factory.html">Factory</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="Factory.html#createWidget">
+                    <h4>createWidget(name, model)</h4>
+                    <span class="desc">Returns a widget depending on <em>name</em>. <em>model</em> will be passed to it and a rendered React component will be returned.</span>
+                </a>
+                <a class="toc-item" href="Factory.html#getWidgets">
+                    <h4>getWidgets(obj) : [React components]</h4>
+                    <span class="desc">Returns an array of React components (widgets) derived from <em>obj</em>. Often an ImageBuilder, <em>obj</em> should expose a function <em>getControlWidgets()</em> which returns a list of names of widgets to be created for the controlinn <em>obj</em>.</span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="ImageBuilder.html">ImageBuilder</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="ImageBuilder.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>queryDataModel</strong>: Instance of the QueryDataModel, used core data handler.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="ImageRenderer.html">ImageRenderer</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="ImageRenderer.html#InitialState">
+                    <h4>InitialState</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    width: 200,
+    height: 200
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="ImageRenderer.html#DefaultProperties">
+                    <h4>DefaultProperties</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    minZoom: 0.1,
+    maxZoom: 10,
+    sensitivity: 1000,
+    crosshairColor: '#000',
+    modifiers: [0, 2],
+    pressRadius: 50
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="ImageRenderer.html#updateDimensions">
+                    <h4>updateDimensions()</h4>
+                    <span class="desc">Updates canvas size based on container size.</span>
+                </a>
+                <a class="toc-item" href="ImageRenderer.html#renderImage">
+                    <h4>renderImage({url: imageURL})</h4>
+                    <span class="desc">Renders an image into the renderer.</span>
+                </a>
+                <a class="toc-item" href="ImageRenderer.html#renderCanvas">
+                    <h4>renderCanvas({...})</h4>
+                    <span class="desc">Renders a canvas into the renderer.</span>
+                </a>
+                <a class="toc-item" href="ImageRenderer.html#resetCamera">
+                    <h4>resetCamera()</h4>
+                    <span class="desc">Resets the zoom level and center so the image fits within the space available.</span>
+                </a>
+                <a class="toc-item" href="ImageRenderer.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>listener</strong>: (Optional) Listener map similar to the one you can get from a QueryDataModel. </li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="LightProperties.html">LightProperties</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="LightProperties.html#onLightTermsChange">
+                    <h4>onLightTermsChange(newVal, name)</h4>
+                    <span class="desc">Sets a new value (<strong>newVal</strong>) for a lighting term <strong>name</strong> on the ImageBuilder.</span>
+                </a>
+                <a class="toc-item" href="LightProperties.html#onLightPositionChange">
+                    <h4>onLightPositionChange(event)</h4>
+                    <span class="desc">Sets a new lighting position on the ImageBuilder</span>
+                </a>
+                <a class="toc-item" href="LightProperties.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>imageBuilder</strong>: The image builder to derive the default lighting terms from</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="LineChart.html">LineChart</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="LineChart.html#toggleLegend">
+                    <h4>toggleLegend()</h4>
+                    <span class="desc">Toggles the visibility of the legned.</span>
+                </a>
+                <a class="toc-item" href="LineChart.html#properties">
+                    <h4>properties</h4>
+                    <span class="desc"><ul>
+<li><strong>data</strong>: Required. An object with a fields property which the LineChart can iterpolate This is usually from a TonicImageBuilder. - <strong>cursor</strong>: Position of the cursor on the linechart.</li>
+
+<li><strong>legend</strong>: Boolean for whether or not to show the chart's legend.</li>
+
+<li><strong>colors</strong>: Colors that will be applied to the lines.</li>
+
+<li><strong>width</strong>: Width in pixels of the element.
+_ <strong>height</strong>: Height in pixels of the element.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="LookupTableWidget.html">LookupTableWidget</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="LookupTableWidget.html#InitialState">
+                    <h4>InitialState</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    mode: 'none',
+    min: '0',
+    max: '0',
+    activePreset: this.props.lut.getPresets()[0],
+    rangeEditing: false,
+    currentControlPointIndex: 0,
+    internal_lut: false
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="LookupTableWidget.html#toggleEditMode">
+                    <h4>toggleEditMode()</h4>
+                    <span class="desc">Toggles the visualization of the scalar bar and edit mode.</span>
+                </a>
+                <a class="toc-item" href="LookupTableWidget.html#togglePresetMode">
+                    <h4>togglePresetMode()</h4>
+                    <span class="desc">Toggles the visualization of the presets.</span>
+                </a>
+                <a class="toc-item" href="LookupTableWidget.html#resetRange">
+                    <h4>resetRange()</h4>
+                    <span class="desc">Resets the scalar range of the lookupTable to use the <strong>originalRange</strong> provided as property.</span>
+                </a>
+                <a class="toc-item" href="LookupTableWidget.html#nextPreset">
+                    <h4>nextPreset()</h4>
+                    <span class="desc">In Preset Mode, this will show the next preset within the list.</span>
+                </a>
+                <a class="toc-item" href="LookupTableWidget.html#previousPreset">
+                    <h4>previousPreset()</h4>
+                    <span class="desc">In Preset Mode, this will show the previous preset within the list.</span>
+                </a>
+                <a class="toc-item" href="LookupTableWidget.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>lut</strong>: Expects a LookupTable instance that you want to render and edit. - <strong>originalRange</strong>: Expects the data range to use for the lookup table in case of reset.</li>
+
+<li><strong>inverse</strong>: Expects a boolean. If true, the control point will be displayed using the inverse of the actual color. Otherwise, a white or black line will be used depending on the best contrast.</li>
+
+<li><strong>lutManager</strong>: Expects a reference to the lookup table manager to use.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="MultiLayout.html">MultiLayout</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="MultiLayout.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>queryDataModel</strong>: A QueryDataModel ti be passed to the AbstractMenu - <strong>imageBuilders</strong>: An array of ImageBuilders</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="MultiLayoutControl.html">MultiLayoutControl</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="MultiLayoutControl.html#onLayoutChange">
+                    <h4>onLayoutChange</h4>
+                    <span class="desc">Tells the renderer that the layout has changed.</span>
+                </a>
+                <a class="toc-item" href="MultiLayoutControl.html#onRenderMethodChange">
+                    <h4>onRenderMethodChange</h4>
+                    <span class="desc">Tells the renderer that the render method has changed.</span>
+                </a>
+                <a class="toc-item" href="MultiLayoutControl.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>renderer</strong>: The MultiLayoutRender associated with the control.</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="MutliLayoutRenderer.html">MutliLayoutRenderer</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="MutliLayoutRenderer.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>imageBuilders</strong>: Required. An object containing ImageBuilders to fill the views. - <strong>spacing</strong>: Spacing between views</li>
+
+<li><strong>borderColor</strong>: Border color of views when they aren't active, as hex or rgb(a).</li>
+
+<li><strong>activeColor</strong>: Border color of views when they are active, as hex or rgb(a).</li>
+
+<li><strong>crosshairColor</strong>: Color of crosshair, as hex or rgb(a).</li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="NumberSliderControl.html">NumberSliderControl</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="NumberSliderControl.html#DefaultProperties">
+                    <h4>DefaultProperties</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    val: 50,
+    max: 100,
+    min:0,
+    step: 1
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="NumberSliderControl.html#updateValue">
+                    <h4>updateValue(newVal)</h4>
+                    <span class="desc">Updates the value of the component to newVal, will clamp the value if newVal is too large or small.</span>
+                </a>
+                <a class="toc-item" href="NumberSliderControl.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc">All properties are optional.</span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="ParameterSet.html">ParameterSet</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="ParameterSet.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>model</strong>: Instance of the QueryDataModel you want to control. </li>
+</ul></span>
+                </a>
+            </div>
+            <h3 class="toc-mod-title"><a href="Probe3dViewer.html">Probe3dViewer</a></h3>
+            <div class="toc-list">
+                <a class="toc-item" href="Probe3dViewer.html#InitialState">
+                    <h4>InitialState</h4>
+                    <span class="desc"><pre class="brush:js"> {
+    renderMethod: 'renderXY',
+    renderMethods: ['renderXY', 'renderZY', 'renderXZ'],
+    probe: [
+        this.props.imageBuilder.getProbe()[0],
+        this.props.imageBuilder.getProbe()[1],
+        this.props.imageBuilder.getProbe()[2]
+    ]
+}
+</pre></span>
+                </a>
+                <a class="toc-item" href="Probe3dViewer.html#Properties">
+                    <h4>Properties</h4>
+                    <span class="desc"><ul>
+<li><strong>queryDataModel</strong>: Instance of the QueryDataModel to be used as core data handler. - <strong>imageBuilder</strong>: Instance of an image builder to be used with the current dataset.</li>
+</ul></span>
+                </a>
+            </div>
+    </div>
+</div>
