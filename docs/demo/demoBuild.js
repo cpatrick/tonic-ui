@@ -32,6 +32,9 @@ var demos = {
     LookupTable         : "./lib/demo/widget/LookupTable/index.js",
     NumberSlider        : "./lib/demo/widget/NumberSlider/index.js",
     ParameterSet        : "./lib/demo/widget/ParameterSet/index.js",
+    
+    // Properties
+    PropertyBlock       : "./lib/demo/properties/Main/index.js"
 };
 
 // ----------------------------------------------------------------------------
