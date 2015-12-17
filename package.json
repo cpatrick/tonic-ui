@@ -9,19 +9,19 @@
     "url": "https://github.com/Kitware/tonic-ui.git"
   },
   "dependencies": {
-    "font-awesome": "4.4.0",
+    "font-awesome": "4.5.0",
     "hammerjs": "2.0.4",
-    "monologue.js": "0.3.3",
-    "mout": "0.11.0",
+    "monologue.js": "0.3.4",
+    "mout": "0.11.1",
     "normalize.css": "3.0.3",
-    "react": "0.14.0",
-    "react-dom": "0.14.0",
+    "react": "0.14.3",
+    "react-dom": "0.14.3",
     "tonic-core": "1.0.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "1.1.4",
+    "cz-conventional-changelog": "1.1.5",
     "tonic-arctic-sample-data": "http://www.kitware.com/in-situ-data/npm/tonic-arctic-sample-data-1.2.2.tgz",
-    "tonic-io": "1.0.0"
+    "tonic-io": "1.1.1"
   },
   "scripts": {
     "build": "webpack",
