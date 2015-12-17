@@ -12,15 +12,15 @@ module.exports = {
       {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: "jshint!babel"
+          loader: "jshint!babel?presets[]=react,presets[]=es2015"
       },{
           test: /\.js$/,
           include: /node_modules\/tonic-/,
-          loader: "babel"
+          loader: "babel?presets[]=react,presets[]=es2015"
       },{
           test: /\.js$/,
           include: /node_modules\/react-contenteditable/,
-          loader: "babel"
+          loader: "babel?presets[]=react,presets[]=es2015"
       }
     ],
     loaders: [
