@@ -278,6 +278,20 @@
               
                 
                 <li>
+                  <a class="source" href="index.html">
+                    index.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="index.html">
+                    index.js
+                  </a>
+                </li>
+              
+                
+                <li>
                   <a class="source" href="test.html">
                     test.js
                   </a>
@@ -301,6 +315,13 @@
                 <li>
                   <a class="source" href="test.html">
                     test.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="index.html">
+                    index.js
                   </a>
                 </li>
               
@@ -635,6 +656,13 @@
               
                 
                 <li>
+                  <a class="source" href="Observable.html">
+                    Observable.js
+                  </a>
+                </li>
+              
+                
+                <li>
                   <a class="source" href="SizeHelper.html">
                     SizeHelper.js
                   </a>
@@ -663,19 +691,93 @@
         
         
         
-          <div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPxToNumber</span>(<span class="hljs-params">str</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>(str.replace(<span class="hljs-string">'px'</span>,<span class="hljs-string">''</span>));
+          <div class='highlight'><pre><span class="hljs-keyword">import</span> Observable <span class="hljs-keyword">from</span> <span class="hljs-string">'./Observable'</span>;
+<span class="hljs-keyword">import</span> debounce   <span class="hljs-keyword">from</span> <span class="hljs-string">'./debounce'</span>;
+
+<span class="hljs-keyword">const</span> observableInstance = <span class="hljs-keyword">new</span> Observable(),
+    TOPIC = <span class="hljs-string">'window.size.change'</span>,
+    domSizes = <span class="hljs-keyword">new</span> <span class="hljs-built_in">WeakMap</span>(),
+    sizeProperties = [<span class="hljs-string">'offsetWidth'</span>, <span class="hljs-string">'offsetHeight'</span>, <span class="hljs-string">'scrollWidth'</span>, <span class="hljs-string">'scrollHeight'</span>, <span class="hljs-string">'clientWidth'</span>, <span class="hljs-string">'clientHeight'</span>],
+    windowListener = debounce(invalidateSize, <span class="hljs-number">250</span>);
+
+<span class="hljs-keyword">let</span> timestamp = <span class="hljs-number">0</span>,
+    listenerAttached = <span class="hljs-literal">false</span>;</pre></div>
+        
+      
+        
+        <p>—— internal functions ——</p>
+
+        
+          <div class='highlight'><pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invalidateSize</span>(<span class="hljs-params"></span>) </span>{
+    timestamp++;
+    triggerChange();
 }
 
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInnerWidth</span>(<span class="hljs-params">el</span>) </span>{
-    <span class="hljs-keyword">var</span> style = <span class="hljs-built_in">window</span>.getComputedStyle(el, <span class="hljs-literal">null</span>);
-    <span class="hljs-keyword">return</span> getPxToNumber(style.getPropertyValue(<span class="hljs-string">'width'</span>));
-}
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInnerHeight</span>(<span class="hljs-params">el</span>) </span>{
-    <span class="hljs-keyword">var</span> style = <span class="hljs-built_in">window</span>.getComputedStyle(el, <span class="hljs-literal">null</span>);
-    <span class="hljs-keyword">return</span> getPxToNumber(style.getPropertyValue(<span class="hljs-string">'height'</span>));
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateSize</span>(<span class="hljs-params">domElement, cacheObj</span>) </span>{
+    <span class="hljs-keyword">if</span>(cacheObj.timestamp &lt; timestamp) {
+        sizeProperties.forEach((prop) =&gt; {
+            cacheObj[prop] = domElement[prop];
+        });
+    }
 }</pre></div>
+        
+      
+        
+        <p>—— New API ——</p>
+
+        
+          <div class='highlight'><pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSize</span>(<span class="hljs-params">domElement</span>) </span>{
+    <span class="hljs-keyword">var</span> cachedSize = domSizes.get(domElement);
+    <span class="hljs-keyword">if</span>(!cachedSize) {
+        cachedSize = { timestamp: <span class="hljs-number">-1</span> };
+        domSizes.set(domElement, cachedSize);
+    }
+    updateSize(domElement, cachedSize);
+
+    <span class="hljs-keyword">return</span> cachedSize;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onSizeChange</span>(<span class="hljs-params">callback</span>) </span>{
+    <span class="hljs-keyword">return</span> observableInstance.on(TOPIC, callback);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">triggerChange</span>(<span class="hljs-params"></span>) </span>{
+    observableInstance.emit(TOPIC);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isListening</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> listenerAttached;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startListening</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span>(!listenerAttached) {
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"resize"</span>, windowListener);
+        listenerAttached = <span class="hljs-literal">true</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stopListening</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span>(listenerAttached) {
+        <span class="hljs-built_in">window</span>.removeEventListener(<span class="hljs-string">"resize"</span>, windowListener);
+        listenerAttached = <span class="hljs-literal">false</span>;
+    }
+}</pre></div>
+        
+      
+        
+        <p>Export</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    getSize,
+    onSizeChange,
+    triggerChange,
+    isListening,
+    startListening,
+    stopListening
+};</pre></div>
         
       
     </div>

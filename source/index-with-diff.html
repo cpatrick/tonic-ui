@@ -278,6 +278,20 @@
               
                 
                 <li>
+                  <a class="source" href="index.html">
+                    index.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="index.html">
+                    index.js
+                  </a>
+                </li>
+              
+                
+                <li>
                   <a class="source" href="test.html">
                     test.js
                   </a>
@@ -301,6 +315,13 @@
                 <li>
                   <a class="source" href="test.html">
                     test.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="index.html">
+                    index.js
                   </a>
                 </li>
               
@@ -635,6 +656,13 @@
               
                 
                 <li>
+                  <a class="source" href="Observable.html">
+                    Observable.js
+                  </a>
+                </li>
+              
+                
+                <li>
                   <a class="source" href="SizeHelper.html">
                     SizeHelper.js
                   </a>
@@ -661,6 +689,19 @@
 
       
         
+        
+        
+          <div class='highlight'><pre><span class="hljs-keyword">import</span> equals                    <span class="hljs-keyword">from</span> <span class="hljs-string">'mout/src/array/equals'</span>;
+<span class="hljs-keyword">import</span> ImageBuilder              <span class="hljs-keyword">from</span> <span class="hljs-string">'tonic-core/lib/builder/image/DataProber'</span>;
+<span class="hljs-keyword">import</span> LookupTableManager        <span class="hljs-keyword">from</span> <span class="hljs-string">'tonic-core/lib/model/LookupTable/LookupTableManager.js'</span>;
+<span class="hljs-keyword">import</span> MultiViewerWidget         <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../react/viewer/MultiLayout'</span>;
+<span class="hljs-keyword">import</span> PixelOperatorImageBuilder <span class="hljs-keyword">from</span> <span class="hljs-string">'tonic-core/lib/builder/image/PixelOperator'</span>;
+<span class="hljs-keyword">import</span> QueryDataModel            <span class="hljs-keyword">from</span> <span class="hljs-string">'tonic-io/lib/QueryDataModel'</span>;
+<span class="hljs-keyword">import</span> React                     <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> ReactDOM                  <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;</pre></div>
+        
+      
+        
         <p>Load CSS</p>
 
         
@@ -668,16 +709,9 @@
 <span class="hljs-built_in">require</span>(<span class="hljs-string">'normalize.css'</span>);
 <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../../css/state.css'</span>);
 
-<span class="hljs-keyword">var</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react'</span>),
-    ReactDOM = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-dom'</span>),
-    MultiViewerWidget = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../../react/viewer/MultiLayout'</span>),
+<span class="hljs-keyword">const</span>
     bodyElement = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.content'</span>),
     jsonData = <span class="hljs-built_in">require</span>(<span class="hljs-string">'json!tonic-arctic-sample-data/data/probe/index.json'</span>),
-    QueryDataModel = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tonic-io/lib/QueryDataModel'</span>),
-    ImageBuilder = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tonic-core/lib/builder/image/DataProber'</span>),
-    PixelOperatorImageBuilder = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tonic-core/lib/builder/image/PixelOperator'</span>),
-    LookupTableManager = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tonic-core/lib/model/LookupTable/LookupTableManager.js'</span>),
-    component = <span class="hljs-literal">null</span>,
     dataModelA = <span class="hljs-keyword">new</span> QueryDataModel(jsonData, __BASE_PATH__ + <span class="hljs-string">'/data/probe/'</span>),
     dataModelB = <span class="hljs-keyword">new</span> QueryDataModel(jsonData, __BASE_PATH__ + <span class="hljs-string">'/data/probe/'</span>),
     dataModelC = <span class="hljs-keyword">new</span> QueryDataModel(jsonData, __BASE_PATH__ + <span class="hljs-string">'/data/probe/'</span>),
@@ -685,8 +719,7 @@
     imageBuilderA = <span class="hljs-keyword">new</span> ImageBuilder(dataModelA, lutManager),
     imageBuilderB = <span class="hljs-keyword">new</span> ImageBuilder(dataModelB, lutManager),
     imageBuilderC = <span class="hljs-keyword">new</span> ImageBuilder(dataModelC, lutManager),
-    diffImageBuilder = <span class="hljs-keyword">new</span> PixelOperatorImageBuilder(),
-    equals = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mout/src/array/equals'</span>);</pre></div>
+    diffImageBuilder = <span class="hljs-keyword">new</span> PixelOperatorImageBuilder();</pre></div>
         
       
         
@@ -720,7 +753,7 @@ imageBuilderC.onCrosshairVisibilityChange(updateCrosshairVisibility);</pre></div
         <p>Create UI element</p>
 
         
-          <div class='highlight'><pre>component = ReactDOM.render(
+          <div class='highlight'><pre>ReactDOM.render(
     React.createElement(
         MultiViewerWidget,
         {
