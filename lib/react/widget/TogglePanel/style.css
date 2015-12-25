@@ -1,0 +1,33 @@
+.TogglePanel {
+    position: relative;
+    display: inline-block;
+}
+
+.TogglePanel_content {
+    position: absolute;
+    z-index: 2;
+}
+
+.TogglePanel_button {
+    position: absolute;
+}
+
+/* Top */
+.TogglePanel_content.top, .TogglePanel_button.top {
+    top: 0;
+}
+
+/* Left */
+.TogglePanel_content.left, .TogglePanel_button.left {
+    left: 0;
+}
+
+/* Right */
+.TogglePanel_content.right, .TogglePanel_button.right {
+    right: 0;
+}
+
+/* Bottom */
+.TogglePanel_content.bottom, .TogglePanel_button.bottom {
+    bottom: 0;
+}
