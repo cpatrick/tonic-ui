@@ -1,0 +1,57 @@
+.DoubleSlider {
+    width: 100%;
+    padding: 1px;
+}
+
+.DoubleSlider input[type="range"] {
+    width: calc(100% - 75px);
+    vertical-align: middle;
+}
+
+.DoubleSlider input[type="text"] {
+    width: 60px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 400px),
+screen and (orientation: landscape) and (max-device-width: 400px) {
+
+    input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    /* while the style is the same as above, neither will render if grouped */
+    input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+.is-ios-device input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* while the style is the same as above, neither will render if grouped */
+.is-ios-device input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50%;
+}
