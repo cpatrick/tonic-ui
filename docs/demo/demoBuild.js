@@ -29,6 +29,7 @@ var demos = {
     CompositeControl    : "./lib/demo/widget/CompositeControl/index.js",
     CoordinateControl   : "./lib/demo/widget/CoordinateControl/index.js",
     Equalizer           : "./lib/demo/widget/Equalizer/index.js",
+    InlineToggleButton  : "./lib/demo/widget/InlineToggleButton/index.js",
     LookupTable         : "./lib/demo/widget/LookupTable/index.js",
     NumberSlider        : "./lib/demo/widget/NumberSlider/index.js",
     ParameterSet        : "./lib/demo/widget/ParameterSet/index.js",
