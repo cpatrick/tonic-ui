@@ -1,3 +1,7 @@
+.ToggleIconButton {
+    cursor: pointer;
+}
+
 .ToggleIconButton.is-enabled {
     color: black;
 }
