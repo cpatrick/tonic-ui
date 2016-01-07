@@ -28,6 +28,7 @@ var demos = {
     ColorPicker         : "./lib/demo/widget/ColorPicker/index.js",
     CompositeControl    : "./lib/demo/widget/CompositeControl/index.js",
     CoordinateControl   : "./lib/demo/widget/CoordinateControl/index.js",
+    DoubleSliderElement : "./lib/demo/widget/DoubleSliderElement/index.js",
     Equalizer           : "./lib/demo/widget/Equalizer/index.js",
     InlineToggleButton  : "./lib/demo/widget/InlineToggleButton/index.js",
     LookupTable         : "./lib/demo/widget/LookupTable/index.js",

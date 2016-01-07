@@ -1,11 +1,12 @@
 .DoubleSlider {
+    display: inline-flex;
     width: 100%;
     padding: 1px;
 }
 
 .DoubleSlider input[type="range"] {
-    width: calc(100% - 75px);
     vertical-align: middle;
+    width: 100%;
 }
 
 .DoubleSlider input[type="text"] {
