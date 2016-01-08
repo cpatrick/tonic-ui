@@ -1,5 +1,4 @@
 .InputBlock {
-    border: 1px solid lightgrey;
     width: calc(100% - 20px);
     display: flex;
     flex-direction: column;
