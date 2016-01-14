@@ -21,10 +21,10 @@ module.exports = function (config) {
           { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=60000" },
           { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
           { test: /\.css$/, loader: "style!css!autoprefixer?browsers=last 2 version" },
-          { test: /\.js$/i, exclude: /node_modules/, loader: "babel" },
-          { test: /\.js$/i, include: /node_modules\/tonic-/, loader: "babel" },
+          { test: /\.js$/i, exclude: /node_modules/, loader: "babel?presets[]=react,presets[]=es2015" },
+          { test: /\.js$/i, include: /node_modules\/tonic-/, loader: "babel?presets[]=react,presets[]=es2015" },
           { test: /\.c$/i, include: /node_modules\/tonic-/, loader: "shader" },
-          { test: /\.js$/, include: /node_modules\/react-contenteditable/, loader: "babel" }
+          { test: /\.js$/, include: /node_modules\/react-contenteditable/, loader: "babel?presets[]=react,presets[]=es2015" }
         ],
         postLoaders: [ { //delays coverage til after tests are run, fixing transpiled source coverage error
           test: /\.js$/,
