@@ -9,8 +9,8 @@ notifications:
     on_failure: always
 node_js:
   - "4.1"
-before_install:
-  - npm run dep:travis
+before_script:
+  - npm run travis
 script:
   - npm run build:release
 after_success:

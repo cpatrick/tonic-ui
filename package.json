@@ -9,45 +9,114 @@
     "url": "https://github.com/Kitware/tonic-ui.git"
   },
   "dependencies": {
+    "tonic-io": "1.2.2",
+    "tonic-core": "1.0.3",
+
     "font-awesome": "4.5.0",
-    "hammerjs": "2.0.4",
+    "normalize.css": "3.0.3",
+
+    "hammerjs": "2.0.6",
     "monologue.js": "0.3.4",
     "mout": "0.11.1",
-    "normalize.css": "3.0.3",
-    "react": "0.14.3",
-    "react-dom": "0.14.3",
-    "tonic-core": "1.0.3"
+
+    "react": "0.14.6",
+    "react-dom": "0.14.6"
   },
   "devDependencies": {
+    "npm-dep": "1.0.0",
     "cz-conventional-changelog": "1.1.5",
-    "tonic-arctic-sample-data": "http://www.kitware.com/in-situ-data/npm/tonic-arctic-sample-data-1.2.2.tgz",
-    "tonic-io": "1.1.5"
+    "tonic-arctic-sample-data": "http://www.kitware.com/in-situ-data/npm/tonic-arctic-sample-data-1.2.2.tgz"
+  },
+  "dep": {
+    "build": {
+        "node-libs-browser": "1.0.0",
+
+        "babel-core": "6.4.5",
+        "babel-eslint": "4.1.6",
+        "babel-loader": "6.2.1",
+        "babel-preset-es2015": "6.3.13",
+        "babel-preset-react": "6.3.13",
+
+        "eslint": "1.10.3",
+        "eslint-loader": "1.2.0",
+        "eslint-plugin-babel": "3.0.0",
+        "eslint-plugin-react": "3.16.1",
+
+        "autoprefixer": "6.3.0",
+        "autoprefixer-loader": "3.2.0",
+        "css-loader": "0.23.1",
+        "expose-loader": "0.7.1",
+        "file-loader": "0.8.5",
+        "json-loader": "0.5.4",
+        "postcss-loader": "0.8.0",
+        "shader-loader": "1.1.4",
+        "style-loader": "0.13.0",
+        "url-loader": "0.5.7",
+
+        "html-webpack-plugin": "2.7.2",
+
+        "webpack": "1.12.12",
+        "webpack-dev-server": "1.14.1"
+    },
+    "deploy": {
+        "commitizen": "2.5.0",
+        "semantic-release": "4.3.5",
+        "tonic-site-generator": "0.2.2"
+    },
+    "karma-bug": {
+        "socket.io": "1.3.7"
+    },
+    "test": {
+        "istanbul":"0.4.2",
+        "istanbul-instrumenter-loader": "0.1.3",
+
+        "expect":"1.13.4",
+        "jasmine-core": "2.4.1",
+        "jest-cli": "0.8.2",
+        "phantomjs": "1.9.19",
+
+        "karma": "0.13.19",
+        "karma-chrome-launcher": "0.2.2",
+        "karma-cli": "0.1.2",
+        "karma-coverage" : "0.5.3",
+        "karma-firefox-launcher": "0.1.7",
+        "karma-jasmine": "0.3.6",
+        "karma-phantomjs-launcher": "0.2.3",
+        "karma-safari-launcher": "0.1.1",
+        "karma-sourcemap-loader": "0.3.7",
+        "karma-webpack": "1.7.0"
+    },
+    "utils": {
+        "serve": "1.4.0",
+        "shelljs": "0.5.3"
+    }
   },
   "scripts": {
+    "travis": "npm-dep -a",
+
+    "prebuild": "npm-dep -s build",
     "build": "webpack",
     "build:debug": "webpack --display-modules",
+
+    "prebuild:release": "npm-dep -s build deploy",
     "build:release": "webpack -p",
+
+    "pretest": "npm-dep -s test",
     "test": "npm run build",
     "test:component": "karma start ./tests/karma.conf.js",
 
     "copyData": "cp -r node_modules/tonic-arctic-sample-data/data docs/www/data",
     "demo": "node docs/demo/demoBuild.js",
 
+    "prewww": "npm-dep -s deploy",
     "www": "tonic-site-generator site.config.js && npm run copyData && npm run demo -- '-url=/tonic-ui' ",
     "www:http": "tonic-site-generator site.config.js --local-test && npm run demo && npm run copyData && serve docs/www",
 
+    "precommit": "npm-dep -s deploy",
     "commit": "git cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
 
-    "dep:webpack": "npm install node-libs-browser@0.5.3 autoprefixer-loader@3.1.0 babel-core@6.3.17 babel-loader@6.2.0 babel-preset-es2015@6.3.13 babel-preset-react@6.3.13 css-loader@0.23.0 expose-loader@0.7.1 file-loader@0.8.5 html-webpack-plugin@1.7.0 eslint@1.10.3 eslint-plugin-babel@3.0.0 eslint-plugin-react@3.11.3 babel-eslint@4.1.6 eslint-loader@1.1.1 json-loader@0.5.4 shader-loader@1.1.4 style-loader@0.13.0 url-loader@0.5.7 webpack@1.12.9",
-    "dep:test": "npm install jasmine-core@2.4.1 jest-cli@0.8.2 karma@0.13.15 karma-chrome-launcher@0.2.2 karma-cli@0.1.1 karma-firefox-launcher@0.1.7 karma-jasmine@0.3.6 karma-phantomjs-launcher@0.2.1 karma-safari-launcher@0.1.1 phantomjs@1.9.19",
-    "dep:www": "npm install tonic-site-generator@0.2.2 serve@1.4.0",
-    "dep:component-tests": "npm run dep:webpack && npm install istanbul-instrumenter-loader@0.1.3 istanbul@0.4.1 karma-coverage@0.5.3 karma-jasmine@0.3.6 karma@0.13.15 karma-sourcemap-loader@0.3.6 karma-webpack@1.7.0 expect@1.13.4",
-    "dep:release": "npm install commitizen@2.4.6 semantic-release@4.3.5",
-
-    "dep:travis": "npm run dep:webpack && npm run dep:release",
-    "dep:local": "npm run dep:webpack && npm run dep:test && npm run dep:www && npm run dep:release",
-    "dep:global": "npm run dep:webpack -- -g && npm run dep:test -- -g && npm run dep:www -- -g && npm run dep:release -- -g"
+    "presemantic-release": "npm-dep deploy",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
     "commitizen": {

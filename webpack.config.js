@@ -19,10 +19,10 @@ module.exports = {
                 loader: "expose?Tonic.ui",
             }, {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader?browsers=last 2 version",
+                loader: "style-loader!css-loader!postcss-loader",
             }, {
                 test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192',
+                loader: 'url?limit=8192',
             }, {
                 test: /\.js$/,
                 include: /node_modules\/tonic-/,
@@ -34,6 +34,9 @@ module.exports = {
             },
         ],
     },
+    postcss: [
+        require('autoprefixer')({ browsers: ['last 2 versions'] }),
+    ],
     externals: {
         "three": "THREE",
     },
